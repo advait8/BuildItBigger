@@ -44,6 +44,7 @@ dependencies {
     freeCompile 'com.google.android.gms:play-services:7.5.0'
     compile 'com.google.code.findbugs:jsr305:2.0.1'
     compile project(path: ':jokeandroidlib')
+    compile project(path: ':backend', configuration: 'android-endpoints')
     compile 'junit:junit:4.12'
 
 }
