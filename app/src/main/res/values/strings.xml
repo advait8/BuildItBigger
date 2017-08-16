@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Build it Bigger</string>
+    <string name="error_text">Error fetching the joke. Please try again later.</string>
 </resources>
