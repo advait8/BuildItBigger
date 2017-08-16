@@ -1,4 +1,4 @@
-package com.udacity.nanodegree.advait.builditbiggerv4.free;
+package com.udacity.nanodegree.advait.builditbiggerv4;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -45,19 +45,14 @@ public class MainActivity extends FragmentActivity implements IAsyncTaskListener
                 } else {
                     Log.d(TAG, "The interstitial wasn't loaded yet.");
                 }
+                JokeAsyncTask jokeAsyncTask = new JokeAsyncTask(MainActivity.this);
+                jokeAsyncTask.execute();
 
             }
         });
         interstitialAd = new InterstitialAd(this);
         interstitialAd.setAdUnitId(this.getString(R.string.banner_ad_unit_id));
         interstitialAd.loadAd(new AdRequest.Builder().build());
-        interstitialAd.setAdListener(new AdListener() {
-            @Override
-            public void onAdClosed() {
-                JokeAsyncTask jokeAsyncTask = new JokeAsyncTask(MainActivity.this);
-                jokeAsyncTask.execute();
-            }
-        });
     }
 
     @Override
