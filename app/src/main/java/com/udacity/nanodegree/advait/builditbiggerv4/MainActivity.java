@@ -1,4 +1,4 @@
-package com.udacity.nanodegree.advait.builditbiggerv4.paid;
+package com.udacity.nanodegree.advait.builditbiggerv4;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;

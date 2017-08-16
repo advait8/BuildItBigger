@@ -4,7 +4,7 @@ package com.udacity.nanodegree.advait.builditbiggerv4;
 import android.support.test.espresso.intent.Intents;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
-import com.udacity.nanodegree.advait.builditbiggerv4.paid.MainActivity;
+import com.udacity.nanodegree.advait.builditbiggerv4.MainActivity;
 import com.udacity.nanodegree.advait.jokeandroidlib.JokeActivity;
 
 import org.junit.Rule;
