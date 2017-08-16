@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 
+import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
 import com.udacity.nanodegree.advait.builditbiggerv4.R;
@@ -42,13 +43,19 @@ public class MainActivity extends FragmentActivity implements IAsyncTaskListener
                 } else {
                     Log.d(TAG, "The interstitial wasn't loaded yet.");
                 }
-                JokeAsyncTask jokeAsyncTask = new JokeAsyncTask(MainActivity.this);
-                jokeAsyncTask.execute();
+
             }
         });
         interstitialAd = new InterstitialAd(this);
         interstitialAd.setAdUnitId(this.getString(R.string.banner_ad_unit_id));
         interstitialAd.loadAd(new AdRequest.Builder().build());
+        interstitialAd.setAdListener(new AdListener(){
+            @Override
+            public void onAdClosed() {
+                JokeAsyncTask jokeAsyncTask = new JokeAsyncTask(MainActivity.this);
+                jokeAsyncTask.execute();
+            }
+        });
     }
 
     @Override
